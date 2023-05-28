@@ -16,17 +16,17 @@ const checkEmail = (email) => {
 const sendMailx = async (output, email, h, s) => {
   try {
     let transporter = nodemailer.createTransport({
-      host: "whitebullsafety.com",
+      host: "loyaltytrading.org",
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "support@whitebullsafety.com",
+        user: "support@loyaltytrading.org",
         pass: "ethereal$12", // generated ethereal password
       },
     });
 
     let info = await transporter.sendMail({
-      from: '"WhitebullSafety" <support@whitebullsafety.com>', // sender address
+      from: '"Loyalty Trading" <support@loyaltytrading.org>', // sender address
       to: email, // list of receivers
       subject: s, // Subject line
       text: output, // plain text body
@@ -41,10 +41,10 @@ const sendingMsg = (name, value, heading, email) => {
   edit;
   if (value > 0) {
     const themsg = `Your ${name} of ${value}USD has been approved for your account. 
-    \nThank you for choosing whitebull safety . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@whitebull safety \n
+    \nThank you for choosing Loyalty Trading . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@loyaltytrading.org \n
 
     \nRegards, 
-    \nwhitebull safety`;
+    \nLoyalty Traading`;
 
     sendMailx(themsg, email, "", heading);
   }
@@ -156,7 +156,7 @@ export const deposit = async (req, res) => {
       For further assistance, you can reach out to support.\n
       
       \nRegards,
-      \nazcryptocoins  Investment.`;
+      \nloyaltytrading  Investment.`;
 
       // sendMailx(msg, email, 'Update on Deposit status.');
       return res.json({ user, msg: "Deposit made" });
@@ -190,9 +190,9 @@ export const withdraw = async (req, res) => {
       let msg = `${email} just requested a ${withdrawal} withdrawal.
 
       \nRegards,
-      \nazcryptocoins `;
+      \nloyaltytrading `;
 
-      // sendMailx(msg, 'support@azcryptocoins.com', 'Withdrawal Requested');
+      // sendMailx(msg, 'support@loyaltytrading.org', 'Withdrawal Requested');
 
       res.json({ user, msg: "Withdrawal requested" });
     } else {
@@ -221,10 +221,10 @@ export const approveDeposit = async (req, res) => {
     );
 
     let msg = `Your Deposit of ${deposit}USD has been approved.
-      \nThank you for choosing azcryptocoins. For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@azcryptocoins .com\n
+      \nThank you for choosing loyaltytrading. For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@loyaltytrading .org\n
 
       \nRegards,
-      \nazcryptocoins `;
+      \nloyaltytrading `;
 
     // sendMailx(msg, email, 'Update on Deposit status.');
 
@@ -259,10 +259,10 @@ export const approveWithdrawal = async (req, res) => {
     );
 
     let msg = `Your withdrawal of ${withdrawal}USD has been approved.
-      \nThank you for choosing azcryptocoins. For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@azcryptocoins .com\n
+      \nThank you for choosing loyaltytrading. For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@loyaltytrading .org\n
 
       \nRegards,
-      \nazcryptocoins `;
+      \nloyaltytrading `;
 
     // sendMailx(msg, email, 'Update on withdrawal status.');
 
@@ -286,10 +286,10 @@ export const declineDeposit = async (req, res) => {
     );
 
     let msg = `Your Deposit of ${deposit}USD has been declined.
-      \nThank you for choosing azcryptocoins . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@azcryptocoins .com\n
+      \nThank you for choosing loyaltytrading . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@loyaltytrading .org\n
 
       \nRegards,
-      \nazcryptocoins `;
+      \nloyaltytrading `;
 
     // sendMailx(msg, email, 'Update on Deposit status.');
 
@@ -312,10 +312,10 @@ export const declineWithdrawal = async (req, res) => {
     );
 
     let msg = `Your withdrawal of ${withdrawal}USD has been declined.
-      \nThank you for choosing azcryptocoins . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@azcryptocoins .com\n
+      \nThank you for choosing loyaltytrading . For complaints or inquires, do not hesitate to contact our 24/7 support team via email: support@loyaltytrading .org\n
 
       \nRegards,
-      \nazcryptocoins `;
+      \nloyaltytrading `;
 
     // sendMailx(msg, email, 'Update on withdrawal status.');
 
