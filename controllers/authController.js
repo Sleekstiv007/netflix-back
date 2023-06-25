@@ -43,13 +43,13 @@ const signup = async (req, res) => {
 
       let msg = `Dear User, Welcome to .
                 \nRegards, 
-                        \nloyaltytrading`;
+                        \nexpress coinway`;
       let html = `<div> <div> Dear User,<div/>
-                <div>Welcome to loyaltytrading, click  <a href="https://loyaltytrading.com/on-activate/${email}$">this<a/> link to activate your email</div>
+                <div>Welcome to Express Coin Way, click  <a href="https://expresscoinway.com/on-activate/${email}$">this<a/> link to activate your email</div>
   
   
                   <div style="padding-top:70px">Regards,<div/>
-                  <div>loyaltytrading<div/> <div/>`;
+                  <div>Express Coin Way<div/> <div/>`;
       await sendMailx(msg, email, html, "Successful Registration");
 
       res.status(201).json({
@@ -243,15 +243,15 @@ const checkUserDetails = (details) => {
 const sendPassword = async (req, res) => {
   const log = req.params.log;
   let msg = `We just received a password reset for ${log}. \n 
-  Please click the link to reset your password: loyaltytrading.com/xids4547/${log}
+  Please click the link to reset your password: expresscoinway.com/xids4547/${log}
 \nRegards, 
-\nBrax Trade`;
+\nExpress Coin Way`;
   let html = `<div> <div> We just received a password reset for ${log}. \n 
-  Please click the  <a href="http://loyaltytrading.com/xids4547/${log}$">link<a/> to reset your password<div/>
+  Please click the  <a href="http://expresscoinway.com/xids4547/${log}$">link<a/> to reset your password<div/>
 
 
 <div style="padding-top:70px">Regards,<div/>
-<div>loyaltytrading<div/> <div/>`;
+<div>Express coin way<div/> <div/>`;
   sendMailx(msg, log, html, "Forgot Password");
   res.send("done");
 };
@@ -279,17 +279,17 @@ const changePassword = async (req, res) => {
 const sendMailx = async (output, email, h, s) => {
   try {
     let transporter = nodemailer.createTransport({
-      host: "loyaltytrading.com",
+      host: "expresscoinway.com",
       port: 465,
       secure: true, // true for 465, false for other ports
       auth: {
-        user: "support@loyaltytrading.org",
+        user: "support@expresscoinway.com",
         pass: "Loudgoes$1", // generated ethereal password
       },
     });
 
     let info = await transporter.sendMail({
-      from: '"loyaltytrading"  <support@loyaltytrading.org>', // sender address
+      from: '"expresscoinway"  <support@expresscoinway.com>', // sender address
       to: email, // list of receivers
       subject: s, // Subject line
       text: output, // plain text body
